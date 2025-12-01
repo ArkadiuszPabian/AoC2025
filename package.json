@@ -6,12 +6,14 @@
     "type": "git",
     "url": "git+https://github.com/ArkadiuszPabian/AoC2025.git"
   },
-  "keywords": [],
   "author": "Arkadiusz Pabian",
   "license": "MIT",
   "homepage": "https://github.com/ArkadiuszPabian/AoC2025#readme",
   "devDependencies": {
-    "assemblyscript": "^0.28.9"
+    "@types/node": "^24.10.1",
+    "assemblyscript": "^0.28.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   },
   "type": "module",
   "exports": {
@@ -25,6 +27,9 @@
     "asbuild:release": "asc assembly/index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
     "test": "node tests",
-    "start": "npx serve ."
+    "start": "npx serve .",
+
+    "build:day01": "asc assembly/day01.ts --target release --exportRuntime --outFile build/day01.wasm",
+    "solve:day01": "npm run build:day01 && ts-node src/day01/1/index.ts"
   }
 }

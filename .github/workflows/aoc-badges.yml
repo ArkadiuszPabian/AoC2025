@@ -22,5 +22,5 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update AoC badges
+          commit_message: "chore: update star amount in readme file"
           file_pattern: README.md
