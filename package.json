@@ -1,0 +1,30 @@
+{
+  "name": "advent-of-code-2025",
+  "version": "1.0.0",
+  "description": "The Advent Of Code challenges - 2025 edition.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArkadiuszPabian/AoC2025.git"
+  },
+  "keywords": [],
+  "author": "Arkadiusz Pabian",
+  "license": "MIT",
+  "homepage": "https://github.com/ArkadiuszPabian/AoC2025#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.28.9"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "test": "node tests",
+    "start": "npx serve ."
+  }
+}
